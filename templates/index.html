@@ -1,0 +1,99 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Price Prediction</title>
+</head>
+<body>
+    <h2>Property Price Prediction</h2>
+    <form action="/predict" method="post">
+        <label for="property_type">Property Type:</label>
+        <input type="text" id="property_type" name="property_type" required><br><br>
+
+        <label for="sector">Sector:</label>
+        <select id="sector" name="sector">
+            {% for sector in sectors %}
+            <option value="{{ sector }}">{{ sector }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="bedrooms">Bedrooms:</label>
+        <select id="bedrooms" name="bedrooms">
+            {% for bedroom in bedrooms %}
+            <option value="{{ bedroom }}">{{ bedroom }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="bathroom">Bathroom:</label>
+        <select id="bathroom" name="bathroom">
+            {% for bath in bathrooms %}
+            <option value="{{ bath }}">{{ bath }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="balcony">Balcony:</label>
+        <select id="balcony" name="balcony">
+            {% for bal in balconies %}
+            <option value="{{ bal }}">{{ bal }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="property_age">Property Age:</label>
+        <select id="property_age" name="property_age">
+            {% for age in ages %}
+            <option value="{{ age }}">{{ age }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="built_up_area">Built-up Area (sq ft):</label>
+        <input type="number" id="built_up_area" name="built_up_area" required><br><br>
+
+        <label for="servant_room">Servant Room:</label>
+        <input type="number" id="servant_room" name="servant_room" required><br><br>
+
+        <label for="store_room">Store Room:</label>
+        <input type="number" id="store_room" name="store_room" required><br><br>
+
+        <label for="furnishing_type">Furnishing Type:</label>
+        <select id="furnishing_type" name="furnishing_type">
+            {% for furnishing in furnishing_types %}
+            <option value="{{ furnishing }}">{{ furnishing }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="luxury_category">Luxury Category:</label>
+        <select id="luxury_category" name="luxury_category">
+            {% for luxury in luxury_categories %}
+            <option value="{{ luxury }}">{{ luxury }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="floor_category">Floor Category:</label>
+        <select id="floor_category" name="floor_category">
+            {% for floor in floor_categories %}
+            <option value="{{ floor }}">{{ floor }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Predict Price</button>
+    </form>
+</body>
+</html>
+
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h2>Predicted Property Price</h2>
+    <p>Estimated Price: ₹{{ price | round(2) }}</p>
+    <p>Price Range: ₹{{ low | round(2) }} - ₹{{ high | round(2) }}</p>
+    <a href="/">Go Back</a>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Predicted Price Range</h1>
+    <p>The estimated price of the property is between \u20b9{{ low|round(2) }} crore and \u20b9{{ high|round(2) }} crore.</p>
+    <a href="{{ url_for('index') }}">Predict Another Property</a>
+</body>
+</html>
