@@ -1,99 +1,118 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Price Prediction</title>
+    <link rel="stylesheet" href="static/styles.css"> 
 </head>
 <body>
-    <h2>Property Price Prediction</h2>
-    <form action="/predict" method="post">
-        <label for="property_type">Property Type:</label>
-        <input type="text" id="property_type" name="property_type" required><br><br>
+    <div class="container">
+        <h2>Property Price Prediction</h2>
+        <form action="/predict" method="POST" class="form-grid">
+            <div class="form-group">
+                <label for="property_type">Property Type:</label>
+                <select name="property_type">
+                    <option value="house">House</option>
+                    <option value="flat">Flat</option>
+                </select>
+            </div>
 
-        <label for="sector">Sector:</label>
-        <select id="sector" name="sector">
-            {% for sector in sectors %}
-            <option value="{{ sector }}">{{ sector }}</option>
-            {% endfor %}
-        </select><br><br>
+            <div class="form-group">
+                <label for="sector">Sector:</label>
+                <select name="sector">
+                    {% for s in sectors %}
+                    <option value="{{ s }}" {% if request.form.sector == s %} selected {% endif %}>{{ s }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <label for="bedrooms">Bedrooms:</label>
-        <select id="bedrooms" name="bedrooms">
-            {% for bedroom in bedrooms %}
-            <option value="{{ bedroom }}">{{ bedroom }}</option>
-            {% endfor %}
-        </select><br><br>
+            <div class="form-group">
+                <label for="bedrooms">Bedrooms:</label>
+                <select name="bedrooms">
+                    {% for b in bedrooms %}
+                    <option value="{{ b }}" {% if request.form.bedrooms == b|string %} selected {% endif %}>{{ b }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <label for="bathroom">Bathroom:</label>
-        <select id="bathroom" name="bathroom">
-            {% for bath in bathrooms %}
-            <option value="{{ bath }}">{{ bath }}</option>
-            {% endfor %}
-        </select><br><br>
+            <div class="form-group">
+                <label for="bathroom">Bathroom:</label>
+                <select name="bathroom">
+                    {% for b in bathrooms %}
+                    <option value="{{ b }}" {% if request.form.bathroom == b|string %} selected {% endif %}>{{ b }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <label for="balcony">Balcony:</label>
-        <select id="balcony" name="balcony">
-            {% for bal in balconies %}
-            <option value="{{ bal }}">{{ bal }}</option>
-            {% endfor %}
-        </select><br><br>
+            <div class="form-group">
+                <label for="balcony">Balcony:</label>
+                <select name="balcony">
+                    {% for b in balconies %}
+                    <option value="{{ b }}" {% if request.form.balcony == b|string %} selected {% endif %}>{{ b }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <label for="property_age">Property Age:</label>
-        <select id="property_age" name="property_age">
-            {% for age in ages %}
-            <option value="{{ age }}">{{ age }}</option>
-            {% endfor %}
-        </select><br><br>
+            <div class="form-group">
+                <label for="property_age">Property Age:</label>
+                <select name="property_age">
+                    {% for a in ages %}
+                    <option value="{{ a }}" {% if request.form.property_age == a|string %} selected {% endif %}>{{ a }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <label for="built_up_area">Built-up Area (sq ft):</label>
-        <input type="number" id="built_up_area" name="built_up_area" required><br><br>
+            <div class="form-group">
+                <label for="built_up_area">Built-up Area :</label>
+                <input type="text" name="built_up_area" value="{{ request.form.built_up_area or '' }}" required>
+            </div>
 
-        <label for="servant_room">Servant Room:</label>
-        <input type="number" id="servant_room" name="servant_room" required><br><br>
+            <div class="form-group">
+                <label for="servant_room">Servant Room:</label>
+                <select name="servant_room">
+                    <option value="0" {% if request.form.servant_room == '0' %} selected {% endif %}>No</option>
+                    <option value="1" {% if request.form.servant_room == '1' %} selected {% endif %}>Yes</option>
+                </select>
+            </div>
 
-        <label for="store_room">Store Room:</label>
-        <input type="number" id="store_room" name="store_room" required><br><br>
+            <div class="form-group">
+                <label for="store_room">Store Room:</label>
+                <select name="store_room">
+                    <option value="0" {% if request.form.store_room == '0' %} selected {% endif %}>No</option>
+                    <option value="1" {% if request.form.store_room == '1' %} selected {% endif %}>Yes</option>
+                </select>
+            </div>
 
-        <label for="furnishing_type">Furnishing Type:</label>
-        <select id="furnishing_type" name="furnishing_type">
-            {% for furnishing in furnishing_types %}
-            <option value="{{ furnishing }}">{{ furnishing }}</option>
-            {% endfor %}
-        </select><br><br>
+            <div class="form-group">
+                <label for="furnishing_type">Furnishing Type:</label>
+                <select name="furnishing_type">
+                    {% for f in furnishing_types %}
+                    <option value="{{ f }}" {% if request.form.furnishing_type == f %} selected {% endif %}>{{ f }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <label for="luxury_category">Luxury Category:</label>
-        <select id="luxury_category" name="luxury_category">
-            {% for luxury in luxury_categories %}
-            <option value="{{ luxury }}">{{ luxury }}</option>
-            {% endfor %}
-        </select><br><br>
+            <div class="form-group">
+                <label for="luxury_category">Luxury Category:</label>
+                <select name="luxury_category">
+                    {% for l in luxury_categories %}
+                    <option value="{{ l }}" {% if request.form.luxury_category == l %} selected {% endif %}>{{ l }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <label for="floor_category">Floor Category:</label>
-        <select id="floor_category" name="floor_category">
-            {% for floor in floor_categories %}
-            <option value="{{ floor }}">{{ floor }}</option>
-            {% endfor %}
-        </select><br><br>
+            <div class="form-group">
+                <label for="floor_category">Floor Category:</label>
+                <select name="floor_category">
+                    {% for f in floor_categories %}
+                    <option value="{{ f }}" {% if request.form.floor_category == f %} selected {% endif %}>{{ f }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <button type="submit">Predict Price</button>
-    </form>
-</body>
-</html>
-
-<!-- result.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction Result</title>
-</head>
-<body>
-    <h2>Predicted Property Price</h2>
-    <p>Estimated Price: ₹{{ price | round(2) }}</p>
-    <p>Price Range: ₹{{ low | round(2) }} - ₹{{ high | round(2) }}</p>
-    <a href="/">Go Back</a>
+            <button type="submit" class="btn">Predict Price</button>
+        </form>
+    </div>
 </body>
 </html>

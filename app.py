@@ -46,7 +46,12 @@ def predict():
     price = np.expm1(model.predict(user_input))[0]
     low = price - 0.2 * price
     high = price + 0.2 * price
-    return render_template('result.html', price=price, low=low, high=high)
+    return render_template('result.html',
+                       price=round(float(price), 2),
+                       low=round(float(low), 2),
+                       high=round(float(high), 2))
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

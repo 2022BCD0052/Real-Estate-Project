@@ -2,11 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-y: hidden;
+
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            flex-wrap: 1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            min-width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #f1c40f;
+        }
+
+        .range {
+            font-size: 18px;
+            color: #ecf0f1;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            padding: 10px 15px;
+            background: #e74c3c;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+        }
+
+        a:hover {
+            background: #c0392b;
+        }
+    </style>
 </head>
 <body>
-    <h1>Predicted Price Range</h1>
-    <p>The estimated price of the property is between \u20b9{{ low|round(2) }} crore and \u20b9{{ high|round(2) }} crore.</p>
-    <a href="{{ url_for('index') }}">Predict Another Property</a>
+    <div class="container">
+        <h2>Predicted Property Price</h2>
+        <p class="price">Estimated Price: {{ "%.2f"|format(price ) }} Cr</p>
+        <p class="range">Price Range: {{ "%.2f"|format(low ) }} Cr - {{ "%.2f"|format(high ) }} Cr</p>
+        <br>
+        <a href="/">Go Back</a>
+    </div>
 </body>
 </html>
