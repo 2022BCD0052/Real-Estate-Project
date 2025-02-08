@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Price Map</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .container { max-width: 90%; }
+        h2 { color: #007bff; text-align: center; margin-top: 20px; }
+        #plotly-map { border-radius: 10px; overflow: hidden; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); }
+        #wordcloud-container { text-align: center; margin-top: 20px; display: none; }
+        .btn-container { text-align: center; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>\U0001f4ca Real Estate Price Analytics</h2>
+
+        <!-- Dropdown for Sector Selection -->
+        <div class="mb-3">
+            <label for="sector-select" class="form-label"><strong>Select a Sector:</strong></label>
+            <select id="sector-select" class="form-control">
+                <option value="" selected disabled>Select a sector...</option>
+                {% for sector in sectors %}
+                <option value="{{ sector }}">{{ sector }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Reset Button -->
+        <div class="btn-container">
+            <button id="reset-map" class="btn btn-warning">\U0001f504 Reset Map</button>
+        </div>
+
+        <div class="card p-3">
+            <div id="plotly-map"></div>
+        </div>
+
+        <div id="wordcloud-container">
+            <h4>\U0001f4cc Sector Highlights</h4>
+            <img id="wordcloud-image" src="" alt="Word Cloud" class="img-fluid">
+        </div>
+    </div>
+
+    <script>
+        var plotData = {{ plot_json | safe }};
+        Plotly.newPlot('plotly-map', plotData);
+
+        // Handle sector selection
+        $("#sector-select").change(function () {
+            var selectedSector = $(this).val();
+            if (!selectedSector) return;
+
+            // \u2705 Update the map with zoom effect
+            $.ajax({
+                url: "/get_updated_map",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ sector: selectedSector }),
+                success: function (response) {
+                    Plotly.newPlot('plotly-map', JSON.parse(response.plot_json));
+                }
+            });
+
+            // \u2705 Fetch and display the word cloud
+            $.ajax({
+                url: "/get_wordcloud",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ sector: selectedSector }),
+                success: function (response) {
+                    $("#wordcloud-image").attr("src", response.wordcloud);
+                    $("#wordcloud-container").fadeIn();
+                }
+            });
+        });
+
+        // \u2705 Reset Map to Default View
+        $("#reset-map").click(function () {
+            $.ajax({
+                url: "/reset_map",
+                type: "POST",
+                success: function (response) {
+                    Plotly.newPlot('plotly-map', JSON.parse(response.plot_json));
+                    $("#wordcloud-container").fadeOut();  // Hide word cloud
+                    $("#sector-select").val(""); // Reset dropdown selection
+                }
+            });
+        });
+    </script>
+</body>
+</html>
