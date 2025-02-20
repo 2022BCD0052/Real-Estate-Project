@@ -1,0 +1,288 @@
+ERROR:root:Error loading datasets: [Errno 2] No such file or directory: 'datasets/apartment_details.csv'
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (inotify)
+ERROR:root:Error loading datasets: [Errno 2] No such file or directory: 'datasets/apartment_details.csv'
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 995-319-412
+INFO:werkzeug:127.0.0.1 - - [21/Feb/2025 00:48:32] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Feb/2025 00:48:38] "POST /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Feb/2025 00:48:40] "POST /recommend HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Feb/2025 00:48:53] "[35m[1mGET /details/La%20Vida%20by%20Tata%20Housing HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+INFO:werkzeug: * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+INFO:werkzeug: * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+ERROR:root:Error loading datasets: [Errno 2] No such file or directory: 'datasets/apartment_details.csv'
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (inotify)
+ERROR:root:Error loading datasets: [Errno 2] No such file or directory: 'datasets/apartment_details.csv'
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 995-319-412
+INFO:werkzeug:127.0.0.1 - - [21/Feb/2025 00:52:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Feb/2025 00:52:55] "[35m[1mGET /details/La%20Vida%20by%20Tata%20Housing HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+INFO:werkzeug: * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+INFO:werkzeug: * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+2025-02-21 00:53:21,878 - ERROR - Error loading datasets: [Errno 2] No such file or directory: 'datasets/apartment_details.csv'
+2025-02-21 00:53:21,891 - WARNING -  * Debugger is active!
+2025-02-21 00:53:21,896 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:53:43,686 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:53:43,686 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:53:43,688 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+2025-02-21 00:53:44,689 - ERROR - Error loading datasets: [Errno 2] No such file or directory: 'datasets/apartment_details.csv'
+2025-02-21 00:53:44,700 - WARNING -  * Debugger is active!
+2025-02-21 00:53:44,704 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:53:51,151 - ERROR - Error loading datasets: [Errno 2] No such file or directory: 'datasets/apartment_details.csv'
+2025-02-21 00:53:51,165 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-21 00:53:51,165 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-21 00:53:51,171 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 00:53:52,039 - ERROR - Error loading datasets: [Errno 2] No such file or directory: 'datasets/apartment_details.csv'
+2025-02-21 00:53:52,051 - WARNING -  * Debugger is active!
+2025-02-21 00:53:52,054 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:54:01,403 - INFO - 127.0.0.1 - - [21/Feb/2025 00:54:01] "[33mPOST /search HTTP/1.1[0m" 404 -
+2025-02-21 00:54:22,835 - INFO - 127.0.0.1 - - [21/Feb/2025 00:54:22] "[33mPOST /recommend HTTP/1.1[0m" 404 -
+2025-02-21 00:54:28,781 - INFO - 127.0.0.1 - - [21/Feb/2025 00:54:28] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-21 00:54:32,960 - INFO - 127.0.0.1 - - [21/Feb/2025 00:54:32] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-21 00:54:33,924 - INFO - 127.0.0.1 - - [21/Feb/2025 00:54:33] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-21 00:54:40,438 - INFO - 127.0.0.1 - - [21/Feb/2025 00:54:40] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-21 00:54:41,452 - INFO - 127.0.0.1 - - [21/Feb/2025 00:54:41] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-21 00:55:14,619 - INFO - 127.0.0.1 - - [21/Feb/2025 00:55:14] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-21 00:55:59,594 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:55:59,595 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:55:59,596 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:00,440 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 00:56:01,201 - ERROR - Error loading datasets: [Errno 2] No such file or directory: 'datasets/artment_details.csv'
+2025-02-21 00:56:01,212 - WARNING -  * Debugger is active!
+2025-02-21 00:56:01,216 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:56:01,808 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:01,810 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:02,003 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 00:56:02,803 - ERROR - Error loading datasets: [Errno 2] No such file or directory: 'datasets/apartment_details.csv'
+2025-02-21 00:56:02,815 - WARNING -  * Debugger is active!
+2025-02-21 00:56:02,819 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:56:06,033 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:06,034 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:06,036 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:06,598 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 00:56:07,410 - ERROR - Error loading datasets: [Errno 2] No such file or directory: 'datasets/apartment_details.csv'
+2025-02-21 00:56:07,426 - WARNING -  * Debugger is active!
+2025-02-21 00:56:07,430 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:56:11,696 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:11,697 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:11,699 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:12,272 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 00:56:13,043 - ERROR - Error loading datasets: [Errno 2] No such file or directory: 'apartment_details.csv'
+2025-02-21 00:56:13,054 - WARNING -  * Debugger is active!
+2025-02-21 00:56:13,057 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:56:15,411 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:15,412 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:15,414 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:15,855 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 00:56:16,641 - ERROR - Error loading datasets: [Errno 2] No such file or directory: 'apartment_.csv'
+2025-02-21 00:56:16,651 - WARNING -  * Debugger is active!
+2025-02-21 00:56:16,654 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:56:20,051 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:20,052 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:20,055 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:20,323 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 00:56:21,184 - ERROR - Error loading datasets: [Errno 2] No such file or directory: 'apartments.csv'
+2025-02-21 00:56:21,201 - WARNING -  * Debugger is active!
+2025-02-21 00:56:21,205 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:56:23,320 - INFO - 127.0.0.1 - - [21/Feb/2025 00:56:23] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-21 00:56:24,825 - INFO - 127.0.0.1 - - [21/Feb/2025 00:56:24] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-21 00:56:26,140 - INFO - 127.0.0.1 - - [21/Feb/2025 00:56:26] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-21 00:56:44,337 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:44,338 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:44,339 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:45,124 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 00:56:45,979 - ERROR - Error loading datasets: [Errno 2] No such file or directory: '.csv'
+2025-02-21 00:56:45,990 - WARNING -  * Debugger is active!
+2025-02-21 00:56:45,994 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:56:46,720 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:46,722 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:46,877 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 00:56:47,722 - ERROR - Error loading datasets: [Errno 2] No such file or directory: ''
+2025-02-21 00:56:47,733 - WARNING -  * Debugger is active!
+2025-02-21 00:56:47,736 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:56:48,365 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:56:48,510 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 00:56:49,382 - WARNING -  * Debugger is active!
+2025-02-21 00:56:49,386 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:56:50,333 - INFO - 127.0.0.1 - - [21/Feb/2025 00:56:50] "GET / HTTP/1.1" 200 -
+2025-02-21 00:56:53,403 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 00:56:53,403 - INFO - 127.0.0.1 - - [21/Feb/2025 00:56:53] "[35m[1mGET /details/La%20Vida%20by%20Tata%20Housing HTTP/1.1[0m" 500 -
+2025-02-21 00:57:02,975 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:02] "POST /recommend HTTP/1.1" 200 -
+2025-02-21 00:57:09,567 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:09] "POST /recommend HTTP/1.1" 200 -
+2025-02-21 00:57:21,387 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 00:57:21,387 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:21] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 00:57:22,900 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 00:57:22,900 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:22] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 00:57:23,531 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 00:57:23,531 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:23] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 00:57:23,731 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 00:57:23,731 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:23] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 00:57:23,912 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 00:57:23,913 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:23] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 00:57:25,725 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 00:57:25,725 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:25] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 00:57:31,428 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 00:57:31,428 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:31] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 00:57:32,042 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 00:57:32,042 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:32] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 00:57:32,222 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 00:57:32,223 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:32] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 00:57:32,416 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 00:57:32,416 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:32] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 00:57:32,593 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 00:57:32,593 - INFO - 127.0.0.1 - - [21/Feb/2025 00:57:32] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 00:58:47,019 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:58:47,020 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:58:47,021 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 00:58:47,608 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 00:58:48,502 - WARNING -  * Debugger is active!
+2025-02-21 00:58:48,506 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 00:58:52,424 - INFO - 127.0.0.1 - - [21/Feb/2025 00:58:52] "GET / HTTP/1.1" 200 -
+2025-02-21 00:59:45,557 - INFO - 127.0.0.1 - - [21/Feb/2025 00:59:45] "GET / HTTP/1.1" 200 -
+2025-02-21 01:01:22,045 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:01:22,045 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:01:22,049 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:01:23,107 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:02:23,549 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-21 01:02:23,549 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-21 01:02:23,556 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:02:24,496 - WARNING -  * Debugger is active!
+2025-02-21 01:02:24,507 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:02:25,229 - INFO - 127.0.0.1 - - [21/Feb/2025 01:02:25] "GET / HTTP/1.1" 200 -
+2025-02-21 01:02:27,658 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 01:02:27,660 - INFO - 127.0.0.1 - - [21/Feb/2025 01:02:27] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 01:02:28,778 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 01:02:28,778 - INFO - 127.0.0.1 - - [21/Feb/2025 01:02:28] "[35m[1mGET /details/Signature%20Global%20City HTTP/1.1[0m" 500 -
+2025-02-21 01:02:35,913 - INFO - 127.0.0.1 - - [21/Feb/2025 01:02:35] "POST /recommend HTTP/1.1" 200 -
+2025-02-21 01:03:00,064 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 01:03:00,064 - INFO - 127.0.0.1 - - [21/Feb/2025 01:03:00] "[35m[1mGET /details/Mahindra%20Luminare HTTP/1.1[0m" 500 -
+2025-02-21 01:03:01,134 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 01:03:01,134 - INFO - 127.0.0.1 - - [21/Feb/2025 01:03:01] "[35m[1mGET /details/Mahindra%20Luminare HTTP/1.1[0m" 500 -
+2025-02-21 01:03:19,782 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:03:19,783 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:03:19,785 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:03:20,785 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:06:33,167 - ERROR - Error loading datasets: [Errno 2] No such file or directory: 'apartments.csv'
+2025-02-21 01:06:33,183 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-21 01:06:33,183 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-21 01:06:33,191 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:06:34,028 - ERROR - Error loading datasets: [Errno 2] No such file or directory: 'apartments.csv'
+2025-02-21 01:06:34,040 - WARNING -  * Debugger is active!
+2025-02-21 01:06:34,043 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:06:37,614 - INFO - 127.0.0.1 - - [21/Feb/2025 01:06:37] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-21 01:07:29,013 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:07:29,014 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:07:29,017 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:07:30,082 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:07:30,752 - ERROR - Error loading datasets: [Errno 2] No such file or directory: ''
+2025-02-21 01:07:30,763 - WARNING -  * Debugger is active!
+2025-02-21 01:07:30,767 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:07:31,426 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:07:31,435 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:07:32,474 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:07:33,301 - WARNING -  * Debugger is active!
+2025-02-21 01:07:33,304 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:07:34,175 - INFO - 127.0.0.1 - - [21/Feb/2025 01:07:34] "GET / HTTP/1.1" 200 -
+2025-02-21 01:07:37,402 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 01:07:37,403 - INFO - 127.0.0.1 - - [21/Feb/2025 01:07:37] "[35m[1mGET /details/Mahindra%20Luminare HTTP/1.1[0m" 500 -
+2025-02-21 01:07:38,314 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 01:07:38,314 - INFO - 127.0.0.1 - - [21/Feb/2025 01:07:38] "[35m[1mGET /details/Mahindra%20Luminare HTTP/1.1[0m" 500 -
+2025-02-21 01:07:40,703 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 01:07:40,703 - INFO - 127.0.0.1 - - [21/Feb/2025 01:07:40] "[35m[1mGET /details/Mahindra%20Luminare HTTP/1.1[0m" 500 -
+2025-02-21 01:07:41,372 - ERROR - Error fetching apartment details: 'name'
+2025-02-21 01:07:41,372 - INFO - 127.0.0.1 - - [21/Feb/2025 01:07:41] "[35m[1mGET /details/Mahindra%20Luminare HTTP/1.1[0m" 500 -
+2025-02-21 01:08:54,319 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:08:54,320 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:08:54,321 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:08:54,481 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:08:55,356 - WARNING -  * Debugger is active!
+2025-02-21 01:08:55,360 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:09:44,521 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:09:44,521 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:09:44,524 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:09:45,391 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:09:58,458 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-21 01:09:58,459 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-21 01:09:58,467 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:09:59,336 - WARNING -  * Debugger is active!
+2025-02-21 01:09:59,341 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:10:05,554 - INFO - 127.0.0.1 - - [21/Feb/2025 01:10:05] "GET /details/Mahindra%20Luminare HTTP/1.1" 200 -
+2025-02-21 01:10:52,844 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:10:52,846 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:10:53,371 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:10:54,465 - WARNING -  * Debugger is active!
+2025-02-21 01:10:54,469 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:11:10,678 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:11:10,679 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:11:10,682 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:11:11,576 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:11:12,533 - WARNING -  * Debugger is active!
+2025-02-21 01:11:12,541 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:11:17,812 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:11:17,815 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:11:17,826 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:11:18,514 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:11:19,497 - WARNING -  * Debugger is active!
+2025-02-21 01:11:19,500 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:11:53,450 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:11:53,451 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:11:53,453 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:11:53,741 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:11:54,580 - WARNING -  * Debugger is active!
+2025-02-21 01:11:54,584 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:12:49,051 - INFO - 127.0.0.1 - - [21/Feb/2025 01:12:49] "GET / HTTP/1.1" 200 -
+2025-02-21 01:12:51,526 - INFO - 127.0.0.1 - - [21/Feb/2025 01:12:51] "GET /details/Mahindra%20Luminare HTTP/1.1" 200 -
+2025-02-21 01:14:02,836 - INFO - 127.0.0.1 - - [21/Feb/2025 01:14:02] "GET /details/Mahindra%20Luminare HTTP/1.1" 200 -
+2025-02-21 01:14:04,014 - INFO - 127.0.0.1 - - [21/Feb/2025 01:14:04] "GET /details/Mahindra%20Luminare HTTP/1.1" 200 -
+2025-02-21 01:15:24,925 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:15:24,925 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:15:24,928 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:15:25,511 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:15:26,308 - WARNING -  * Debugger is active!
+2025-02-21 01:15:26,311 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:15:28,448 - INFO - 127.0.0.1 - - [21/Feb/2025 01:15:28] "GET / HTTP/1.1" 200 -
+2025-02-21 01:15:31,578 - INFO - 127.0.0.1 - - [21/Feb/2025 01:15:31] "POST /recommend HTTP/1.1" 200 -
+2025-02-21 01:15:33,333 - INFO - 127.0.0.1 - - [21/Feb/2025 01:15:33] "POST /search HTTP/1.1" 200 -
+2025-02-21 01:16:50,092 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:16:50,092 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:16:50,094 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:16:50,465 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:16:51,210 - WARNING -  * Debugger is active!
+2025-02-21 01:16:51,214 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:16:53,453 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:16:53,454 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:16:53,456 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:16:53,934 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:16:54,706 - WARNING -  * Debugger is active!
+2025-02-21 01:16:54,710 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:16:56,938 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:16:56,939 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:16:56,941 - INFO -  * Detected change in '/home/yogeshsaini/Machin Learning/ML PROJECT/Real-Estate-Project/recommenderSystem.py', reloading
+2025-02-21 01:16:57,553 - INFO -  * Restarting with watchdog (inotify)
+2025-02-21 01:16:58,491 - WARNING -  * Debugger is active!
+2025-02-21 01:16:58,495 - INFO -  * Debugger PIN: 995-319-412
+2025-02-21 01:17:31,065 - INFO - 127.0.0.1 - - [21/Feb/2025 01:17:31] "GET / HTTP/1.1" 200 -
+2025-02-21 01:17:35,631 - INFO - 127.0.0.1 - - [21/Feb/2025 01:17:35] "POST /search HTTP/1.1" 200 -
+2025-02-21 01:17:38,365 - INFO - 127.0.0.1 - - [21/Feb/2025 01:17:38] "POST /recommend HTTP/1.1" 200 -
+2025-02-21 01:18:09,733 - INFO - 127.0.0.1 - - [21/Feb/2025 01:18:09] "GET / HTTP/1.1" 200 -
+2025-02-21 01:18:15,607 - INFO - 127.0.0.1 - - [21/Feb/2025 01:18:15] "POST /search HTTP/1.1" 200 -
+2025-02-21 01:18:17,932 - INFO - 127.0.0.1 - - [21/Feb/2025 01:18:17] "POST /recommend HTTP/1.1" 200 -
+2025-02-21 01:18:57,645 - INFO - 127.0.0.1 - - [21/Feb/2025 01:18:57] "GET / HTTP/1.1" 200 -
+2025-02-21 01:19:04,957 - INFO - 127.0.0.1 - - [21/Feb/2025 01:19:04] "POST /search HTTP/1.1" 200 -
+2025-02-21 01:19:07,454 - INFO - 127.0.0.1 - - [21/Feb/2025 01:19:07] "POST /recommend HTTP/1.1" 200 -
+2025-02-21 01:19:32,528 - INFO - 127.0.0.1 - - [21/Feb/2025 01:19:32] "GET / HTTP/1.1" 200 -
+2025-02-21 01:19:40,169 - INFO - 127.0.0.1 - - [21/Feb/2025 01:19:40] "POST /search HTTP/1.1" 200 -

@@ -5,58 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apartment Recommendation System</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
         body {
-            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             text-align: center;
-            margin: 50px;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: grid;
+            gap: 20px;
         }
-        select, input, button {
-            margin: 10px;
-            padding: 10px;
+        h1 {
+            font-size: 28px;
+        }
+        h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* Grid Layout for Forms */
+        .search-container, .recommend-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .search-container label, .recommend-container label {
+            font-weight: bold;
+        }
+        .search-container select, 
+        .search-container input, 
+        .recommend-container select {
+            width: 100%;
+            max-width: 300px;
+            padding: 12px;
             font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            text-align: center;
         }
-        #results, #recommendations {
-            margin-top: 20px;
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Buttons */
+        button {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: white;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            max-width: 300px;
+        }
+        button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        }
+
+        /* Results Grid */
+        .results, .recommendations {
+            display: grid;
+            gap: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            text-align: left;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .search-container, .recommend-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .search-container select, 
+            .search-container input, 
+            .recommend-container select, 
+            button {
+                width: auto;
+                flex: 1;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>Apartment Recommendation System</h1>
+    <div class="container">
+        <h1>\U0001f3e1 Apartment Finder</h1>
 
-    <h2>Search Nearby Properties</h2>
-    <label for="location">Select Location:</label>
-    <select id="location">
-        {% for loc in locations %}
-            <option value="{{ loc }}">{{ loc }}</option>
-        {% endfor %}
-    </select>
-    <input type="number" id="radius" placeholder="Enter Radius in km">
-    <button onclick="searchProperties()">Search</button>
+        <!-- Search Nearby Properties -->
+        <div class="search-container">
+            <label for="location">\U0001f4cd Location:</label>
+            <select id="location">
+                {% for loc in locations %}
+                    <option value="{{ loc }}">{{ loc }}</option>
+                {% endfor %}
+            </select>
+            <input type="number" id="radius" placeholder="Enter Radius (km)">
+            <button onclick="searchProperties()">Search</button>
+        </div>
+        <div id="results" class="results"></div>
 
-    <div id="results"></div>
-
-    <h2>Recommend Apartments</h2>
-    <label for="apartment">Select an Apartment:</label>
-    <select id="apartment">
-        {% for apt in apartments %}
-            <option value="{{ apt }}">{{ apt }}</option>
-        {% endfor %}
-    </select>
-    <button onclick="getRecommendations()">Recommend</button>
-
-    <div id="recommendations"></div>
+        <!-- Recommend Apartments -->
+        <div class="recommend-container">
+            <label for="apartment">\U0001f3e0 Choose Apartment:</label>
+            <select id="apartment">
+                {% for apt in apartments %}
+                    <option value="{{ apt }}">{{ apt }}</option>
+                {% endfor %}
+            </select>
+            <button onclick="getRecommendations()">Recommend</button>
+        </div>
+        <div id="recommendations" class="recommendations"></div>
+    </div>
 
     <script>
         function searchProperties() {
             let location = $('#location').val();
             let radius = $('#radius').val();
-
-            if (!radius) {
-                alert("Please enter a radius!");
-                return;
-            }
 
             $.ajax({
                 url: "/search",
@@ -64,15 +172,15 @@
                 contentType: "application/json",
                 data: JSON.stringify({ location: location, radius: radius }),
                 success: function(response) {
-                    let resultHTML = "<h3>Nearby Properties:</h3><ul>";
+                    let resultHTML = "<h3>\U0001f3d9 Nearby Properties:</h3><ul>";
                     response.forEach(property => {
-                        resultHTML += `<li>${property.name} - ${property.distance_km} km away</li>`;
+                        resultHTML += `<li><strong>${property.name}</strong> - ${property.distance_km} km away</li>`;
                     });
                     resultHTML += "</ul>";
                     $('#results').html(resultHTML);
                 },
                 error: function() {
-                    alert("Error fetching properties.");
+                    $('#results').html("<p style='color: red;'>\u26a0\ufe0f Error fetching properties. Try again.</p>");
                 }
             });
         }
@@ -86,15 +194,15 @@
                 contentType: "application/json",
                 data: JSON.stringify({ apartment: apartment }),
                 success: function(response) {
-                    let recHTML = "<h3>Recommended Apartments:</h3><ul>";
+                    let recHTML = "<h3>\U0001f3e0 Recommended Apartments:</h3><ul>";
                     response.forEach(rec => {
-                        recHTML += `<li>${rec.PropertyName} (Score: ${rec.SimilarityScore.toFixed(2)})</li>`;
+                        recHTML += `<li><strong>${rec.PropertyName}</strong> (Score: ${rec.SimilarityScore.toFixed(2)})</li>`;
                     });
                     recHTML += "</ul>";
                     $('#recommendations').html(recHTML);
                 },
                 error: function() {
-                    alert("Error fetching recommendations.");
+                    $('#recommendations').html("<p style='color: red;'>\u26a0\ufe0f Error fetching recommendations. Try again.</p>");
                 }
             });
         }
