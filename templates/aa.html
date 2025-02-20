@@ -89,6 +89,8 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
             text-align: left;
+            max-height: 250px; /* Fixed height */
+            overflow-y: auto; /* Scroll if content overflows */
         }
         ul {
             list-style: none;
@@ -100,6 +102,7 @@
             border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             color: white;
+            margin-bottom: 5px;
         }
 
         /* Responsive Design */
@@ -115,8 +118,8 @@
     <div class="container">
         <!-- Left Column: Inputs -->
         <div class="input-container">
-            <h2>🏡 Search Nearby Properties</h2>
-            <label for="location">📍 Location:</label>
+            <h2>\U0001f3e1 Search Nearby Properties</h2>
+            <label for="location">\U0001f4cd Location:</label>
             <select id="location">
                 {% for loc in locations %}
                     <option value="{{ loc }}">{{ loc }}</option>
@@ -125,8 +128,8 @@
             <input type="number" id="radius" placeholder="Enter Radius (km)">
             <button onclick="searchProperties()">Search</button>
 
-            <h2>🏠 Recommend Apartments</h2>
-            <label for="apartment">🏠 Choose Apartment:</label>
+            <h2>\U0001f3e0 Recommend Apartments</h2>
+            <label for="apartment">\U0001f3e0 Choose Apartment:</label>
             <select id="apartment">
                 {% for apt in apartments %}
                     <option value="{{ apt }}">{{ apt }}</option>
@@ -137,8 +140,8 @@
 
         <!-- Right Column: Outputs -->
         <div class="output-container">
-            <div id="results" class="results"><h3>🔍 Nearby Properties:</h3></div>
-            <div id="recommendations" class="recommendations"><h3>✨ Recommended Apartments:</h3></div>
+            <div id="results" class="results"><h3>\U0001f50d Nearby Properties:</h3></div>
+            <div id="recommendations" class="recommendations"><h3>\u2728 Recommended Apartments:</h3></div>
         </div>
     </div>
 
@@ -153,7 +156,7 @@
                 contentType: "application/json",
                 data: JSON.stringify({ location: location, radius: radius }),
                 success: function(response) {
-                    let resultHTML = "<h3>🏙 Nearby Properties:</h3><ul>";
+                    let resultHTML = "<h3>\U0001f3d9 Nearby Properties:</h3><ul>";
                     response.forEach(property => {
                         resultHTML += `<li><strong>${property.name}</strong> - ${property.distance_km} km away</li>`;
                     });
@@ -161,7 +164,7 @@
                     $('#results').html(resultHTML);
                 },
                 error: function() {
-                    $('#results').html("<p style='color: red;'>⚠️ Error fetching properties. Try again.</p>");
+                    $('#results').html("<p style='color: red;'>\u26a0\ufe0f Error fetching properties. Try again.</p>");
                 }
             });
         }
@@ -175,7 +178,7 @@
                 contentType: "application/json",
                 data: JSON.stringify({ apartment: apartment }),
                 success: function(response) {
-                    let recHTML = "<h3>🏠 Recommended Apartments:</h3><ul>";
+                    let recHTML = "<h3>\U0001f3e0 Recommended Apartments:</h3><ul>";
                     response.forEach(rec => {
                         recHTML += `<li><strong>${rec.PropertyName}</strong> (Score: ${rec.SimilarityScore.toFixed(2)})</li>`;
                     });
@@ -183,7 +186,7 @@
                     $('#recommendations').html(recHTML);
                 },
                 error: function() {
-                    $('#recommendations').html("<p style='color: red;'>⚠️ Error fetching recommendations. Try again.</p>");
+                    $('#recommendations').html("<p style='color: red;'>\u26a0\ufe0f Error fetching recommendations. Try again.</p>");
                 }
             });
         }
