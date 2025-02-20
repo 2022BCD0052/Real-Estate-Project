@@ -125,5 +125,142 @@ def reset_map():
     return jsonify({"plot_json": reset_plot_json})
 
 
+
+
+# plot scatter plot for the selected sector
+
+@app.route('/get_default_data', methods=['GET'])
+def get_default_data():
+    """Provide default word cloud and scatter plot for initial page load."""
+    default_sector = df["sector"].mode()[0]  # Choose the most common sector as default
+
+    # ✅ Generate default word cloud
+    text_data = f"{default_sector} real estate investment opportunity affordability luxury"
+    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text_data)
+
+    img_buffer = BytesIO()
+    plt.figure(figsize=(8, 4))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis("off")
+    plt.savefig(img_buffer, format='png', bbox_inches='tight')
+    img_buffer.seek(0)
+    img_base64 = base64.b64encode(img_buffer.read()).decode('utf-8')
+    plt.close()
+
+    # ✅ Generate default scatter plot
+    new_df = df[df["sector"] == default_sector]
+    fig = px.scatter(
+        new_df,
+        x='built_up_area',
+        y='price_per_sqft',
+        color='bedrooms',
+        size='price',
+        hover_name='project_name',
+        title=f"Real Estate Investment Opportunities in {default_sector}",
+        labels={'built_up_area': 'Built-up Area (sqft)', 'price_per_sqft': 'Price per Sqft (INR)'}
+    )
+    scatter_plot_json = pio.to_json(fig)
+
+    return jsonify({
+        "default_sector": default_sector,
+        "wordcloud": f"data:image/png;base64,{img_base64}",
+        "scatter_plot_json": scatter_plot_json
+    })
+
+@app.route('/get_scatter_plot', methods=['POST'])
+def get_scatter_plot():
+    data = request.json
+    selected_sector = data.get("sector")
+
+    if not selected_sector:
+        return jsonify({"error": "No sector selected"}), 400
+
+    # \u2705 Ensure filtering happens correctly
+    new_df = df[df["sector"] == selected_sector]
+
+    if new_df.empty:
+        return jsonify({"error": f"No data available for sector: {selected_sector}"}), 400
+
+    # \u2705 Create Scatter Plot with Correct Columns
+    fig = px.scatter(
+        new_df,  # \U0001f539 Use the filtered dataframe!
+        x="built_up_area",  
+        y="price",  
+        color="bedRoom",  # \U0001f539 Correct column name
+        size="price",  
+        hover_name="society",
+        title=f"Built-up Area vs Price for {selected_sector}",
+        labels={"built_up_area": "Built-up Area (sqft)", "price": "Price (INR)"},
+    )
+
+    plot_json = pio.to_json(fig)
+
+    return jsonify({"plot_json": plot_json})
+print("Server is running...")
+print(df.columns)
+
+
+
+#  more plots were there in the original code, but I have removed them to keep the code simple and easy to understand
+# get average price per sqft for the selected sector
+@app.route('/get_avg_price', methods=['GET'])
+def get_avg_price():
+    avg_price = df.groupby("sector")["price"].mean().reset_index()
+
+    fig = px.bar(
+        avg_price, 
+        x="sector", 
+        y="price", 
+        title="Average Price Per Sector", 
+        labels={"price": "Average Price (INR)", "sector": "Sector"}, 
+        color="sector"
+    )
+    return jsonify({"plot_json": pio.to_json(fig)})
+
+# build a pie chart for the selected sector
+@app.route('/get_builtup_distribution', methods=['GET'])
+def get_builtup_distribution():
+    fig = px.histogram(
+        df, 
+        x="built_up_area", 
+        nbins=50, 
+        title="Distribution of Built-up Area",
+        labels={"built_up_area": "Built-up Area (sqft)"},
+        color_discrete_sequence=["#FF5733"]
+    )
+    return jsonify({"plot_json": pio.to_json(fig)})
+
+# Luxury Score Analysis (Box Plot)
+
+@app.route('/get_luxury_analysis', methods=['GET'])
+def get_luxury_analysis():
+    fig = px.box(
+        df, 
+        x="sector", 
+        y="luxury_score", 
+        title="Luxury Score Across Sectors",
+        labels={"luxury_score": "Luxury Score", "sector": "Sector"},
+        color="sector"
+    )
+    return jsonify({"plot_json": pio.to_json(fig)})
+
+#  Property Count by Type (Pie Chart)
+@app.route('/get_property_distribution', methods=['GET'])
+def get_property_distribution():
+    property_counts = df["property_type"].value_counts().reset_index()
+    property_counts.columns = ["property_type", "count"]
+
+    fig = px.pie(
+        property_counts, 
+        names="property_type", 
+        values="count", 
+        title="Property Type Distribution",
+        color_discrete_sequence=px.colors.qualitative.Pastel
+    )
+    return jsonify({"plot_json": pio.to_json(fig)})
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
