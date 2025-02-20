@@ -166,7 +166,7 @@
                 contentType: "application/json",
                 data: JSON.stringify({ location: location, radius: radius }),
                 success: function(response) {
-                    let resultHTML = "<h3>\U0001f3d9\ufe0f Nearby Properties:</h3><ul>";
+                    let resultHTML = "<h3>Nearby Properties:</h3><ul>";
                     response.forEach(property => {
                         resultHTML += `<li><strong>${property.name}</strong> - ${property.distance_km} km away</li>`;
                     });
@@ -174,7 +174,7 @@
                     $('#results').html(resultHTML);
                 },
                 error: function() {
-                    $('#results').html("<p style='color: red;'>\u26a0\ufe0f Error fetching properties. Try again.</p>");
+                    $('#results').html("<p style='color: red;'> Error fetching properties. Try again.</p>");
                 }
             });
         }
@@ -188,7 +188,7 @@
                 contentType: "application/json",
                 data: JSON.stringify({ apartment: apartment }),
                 success: function(response) {
-                    let recHTML = "<h3>\U0001f3e1 Recommended Apartments:</h3><ul>";
+                    let recHTML = "<h3> Recommended Apartments:</h3><ul>";
                     response.forEach(rec => {
                         recHTML += `<li><strong>${rec.PropertyName}</strong> (Score: ${rec.SimilarityScore.toFixed(2)})</li>`;
                     });
@@ -196,7 +196,7 @@
                     $('#recommendations').html(recHTML);
                 },
                 error: function() {
-                    $('#recommendations').html("<p style='color: red;'>\u26a0\ufe0f Error fetching recommendations. Try again.</p>");
+                    $('#recommendations').html("<p style='color: red;'> Error fetching recommendations. Try again.</p>");
                 }
             });
         }
