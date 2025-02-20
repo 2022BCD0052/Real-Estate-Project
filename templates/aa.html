@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Recommendation System</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        select, input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #results, #recommendations {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Apartment Recommendation System</h1>
+
+    <h2>Search Nearby Properties</h2>
+    <label for="location">Select Location:</label>
+    <select id="location">
+        {% for loc in locations %}
+            <option value="{{ loc }}">{{ loc }}</option>
+        {% endfor %}
+    </select>
+    <input type="number" id="radius" placeholder="Enter Radius in km">
+    <button onclick="searchProperties()">Search</button>
+
+    <div id="results"></div>
+
+    <h2>Recommend Apartments</h2>
+    <label for="apartment">Select an Apartment:</label>
+    <select id="apartment">
+        {% for apt in apartments %}
+            <option value="{{ apt }}">{{ apt }}</option>
+        {% endfor %}
+    </select>
+    <button onclick="getRecommendations()">Recommend</button>
+
+    <div id="recommendations"></div>
+
+    <script>
+        function searchProperties() {
+            let location = $('#location').val();
+            let radius = $('#radius').val();
+
+            if (!radius) {
+                alert("Please enter a radius!");
+                return;
+            }
+
+            $.ajax({
+                url: "/search",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ location: location, radius: radius }),
+                success: function(response) {
+                    let resultHTML = "<h3>Nearby Properties:</h3><ul>";
+                    response.forEach(property => {
+                        resultHTML += `<li>${property.name} - ${property.distance_km} km away</li>`;
+                    });
+                    resultHTML += "</ul>";
+                    $('#results').html(resultHTML);
+                },
+                error: function() {
+                    alert("Error fetching properties.");
+                }
+            });
+        }
+
+        function getRecommendations() {
+            let apartment = $('#apartment').val();
+
+            $.ajax({
+                url: "/recommend",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ apartment: apartment }),
+                success: function(response) {
+                    let recHTML = "<h3>Recommended Apartments:</h3><ul>";
+                    response.forEach(rec => {
+                        recHTML += `<li>${rec.PropertyName} (Score: ${rec.SimilarityScore.toFixed(2)})</li>`;
+                    });
+                    recHTML += "</ul>";
+                    $('#recommendations').html(recHTML);
+                },
+                error: function() {
+                    alert("Error fetching recommendations.");
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
